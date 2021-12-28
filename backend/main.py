@@ -5,6 +5,7 @@ from fastapi.param_functions import Depends
 from sqlalchemy.orm import load_only
 from sqlalchemy.orm.session import Session
 from src import database, models, schemas
+from fastapi.middleware.cors import CORSMiddleware
 
 # Create all required table if needed
 database.Base.metadata.create_all(bind=database.engine)
@@ -17,6 +18,19 @@ def get_db():
        db.close()
 
 app = FastAPI()
+
+origins = [
+    "http://127.0.0.1:4200",
+    "http://localhost:4200",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/products", response_model=List[schemas.Product])
 def getAllProducts(db: Session = Depends(get_db)):
