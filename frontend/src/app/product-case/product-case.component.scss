@@ -1,0 +1,105 @@
+.product-card {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+}
+
+.product-card > div {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+}
+
+.product-card-image {
+    z-index: 1;
+    top: 0%;
+}
+
+.product-card-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.product-card-screen {
+    top: 0%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7));
+    z-index: 2;
+}
+
+.product-card-price {
+    margin-bottom: 5%;
+    text-align: end;
+    margin-right: 5%;
+    font-size: large;
+    z-index: 3;
+}
+
+.product-card-description {
+    font-size: medium;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: justify;
+    z-index: 4;
+    opacity: 0;
+}
+
+.product-card-description > p {
+    display: block;/* or inline-block */
+    word-wrap: normal;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 3.6em;
+    line-height: 1.8em;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-price {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-60px);
+    }
+}
+
+@keyframes raise-gradient {
+    from {
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7));
+    }
+    to {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1));
+    }
+}
+
+.product-card:hover {
+    .product-card-description {
+        animation-name: fade-in;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .product-card-price {
+        animation-name: move-price;
+        animation-duration: 400ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .product-card-screen {
+        animation-name: raise-gradient;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}

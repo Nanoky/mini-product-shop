@@ -1,0 +1,12 @@
+<div class="product-list-page">
+    <h2>Product catalog</h2>
+
+    <mat-grid-list cols="4" gutterSize="10">
+        <mat-grid-tile *ngFor="let product of products | async">
+            <app-product-case [product]="product"></app-product-case>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
+
+
