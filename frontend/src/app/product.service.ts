@@ -12,4 +12,8 @@ export class ProductService {
   getItems() : Observable<Product[]> {
     return this.http.get<Product[]>("http://127.0.0.1:8000/products");
   }
+
+  getItem(id: number) : Observable<Product> {
+    return this.http.get<Product>("http://127.0.0.1:8000/products/" + id);
+  }
 }

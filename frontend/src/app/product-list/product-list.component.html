@@ -3,7 +3,9 @@
 
     <mat-grid-list cols="4" gutterSize="10">
         <mat-grid-tile *ngFor="let product of products | async">
-            <app-product-case [product]="product"></app-product-case>
+            <a [routerLink]="['/products', product.id]">
+                <app-product-case [product]="product"></app-product-case>
+            </a>
         </mat-grid-tile>
     </mat-grid-list>
 

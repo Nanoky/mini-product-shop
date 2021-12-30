@@ -1,0 +1,120 @@
+.page {
+    padding: 3%;
+}
+
+.page::after {
+    content: "";
+    background: url("/assets/background.png");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+.title {
+    font-size: xx-large;
+}
+
+.content {
+    margin-top: 5%;
+    height: 500px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid > div {
+    display: flex;
+}
+
+.primary-tile {
+    display: flex;
+    flex-direction: row;
+}
+
+.primary-tile > div {
+    background-color: white;
+}
+
+.description-tile {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2%;
+    margin-top: 2%;
+    font-size: medium;
+    background-color: white;
+}
+
+.label {
+    font-weight: bold;
+
+}
+
+.value-tile {
+    width: 88%;
+    margin-left: 2%;
+}
+
+.information {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 2%;
+    padding: 3%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.name-price-tile {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    font-size: large;
+    justify-content: center;
+}
+
+.name-tile {
+    margin-bottom: 10%;
+}
+
+.image-tile {
+    border-radius: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 50%;
+}
+
+.image-tile > img {
+    width: 100%;
+    height: 100%;
+}
+
+.buttons-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button {
+    width: 150px;
+    padding: 10%;
+    margin-bottom: 10%;
+    color: white;
+    border: 0px;
+    border-radius: 5%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);       
+    font-size: medium;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+}
+
+.checkout-tile > button {
+    background-color: rgb(60, 179, 60)
+}
+
+.continu-tile > button {
+    background-color: rgb(21, 161, 254);
+}

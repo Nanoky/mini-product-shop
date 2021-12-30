@@ -1,0 +1,39 @@
+<div class="page">
+    <span class="title">Product detail</span>
+    <div class="content">
+        <div class="grid">
+            <div class="primary-tile">
+                <div class="image-tile">
+                    <img src="{{product?.image_url}}" alt="">
+                </div>
+                <div class="information">
+                    <div class="name-price-tile">
+                        <div class="name-tile">
+                            <span class="label">Name : </span> {{product?.name}}
+                        </div>
+                        <div class="price-tile">
+                            <span class="label">Price : </span> {{product?.price}} $
+                        </div>
+                    </div>
+                    <div class="buttons-tile">
+                        <div class="checkout-tile">
+                            <button mat-raised-button>Checkout</button>
+                        </div>
+                        <div class="continu-tile">
+                            <button mat-raised-button>Continue shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description-tile">
+                <div class="label-tile">
+                    <span class="label">Description : </span> 
+                </div>
+                <div class="value-tile">
+                    {{product?.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
