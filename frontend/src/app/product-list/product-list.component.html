@@ -1,8 +1,10 @@
 <div class="product-list-page">
     <span class="title">Product catalog</span>
 
+    <mat-paginator [length]="pages?.total" [pageIndex]="page" [pageSize]="size" (page)="handlePage($event)" [pageSizeOptions]="[10, 20, 30, 40, 50]" aria-label="Select page">
+    </mat-paginator>
     <mat-grid-list cols="4" gutterSize="10">
-        <mat-grid-tile *ngFor="let product of products | async">
+        <mat-grid-tile *ngFor="let product of products">
             <a [routerLink]="['/products', product.id]">
                 <app-product-case [product]="product"></app-product-case>
             </a>
