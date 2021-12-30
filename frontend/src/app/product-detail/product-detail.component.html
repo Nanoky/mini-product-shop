@@ -12,15 +12,15 @@
                             <span class="label">Name : </span> {{product?.name}}
                         </div>
                         <div class="price-tile">
-                            <span class="label">Price : </span> {{product?.price}} $
+                            <span class="label">Price : </span> {{product?.price}} {{currency}}
                         </div>
                     </div>
                     <div class="buttons-tile">
                         <div class="checkout-tile">
-                            <button mat-raised-button>Checkout</button>
+                            <button (click)="checkout()">Checkout</button>
                         </div>
                         <div class="continu-tile">
-                            <button mat-raised-button>Continue shopping</button>
+                            <button (click)="backToList()">Continue shopping</button>
                         </div>
                     </div>
                 </div>

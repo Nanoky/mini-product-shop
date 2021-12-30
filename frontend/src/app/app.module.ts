@@ -10,6 +10,7 @@ import { ProductCaseComponent } from './product-case/product-case.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     }),
     BrowserAnimationsModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
