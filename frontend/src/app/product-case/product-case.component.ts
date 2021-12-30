@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GlobalComponent } from '../global-component';
 import { Product } from '../product';
 
 @Component({
@@ -9,6 +10,7 @@ import { Product } from '../product';
 export class ProductCaseComponent implements OnInit {
 
   @Input() product: Product | undefined;
+  currency = GlobalComponent.currenty;
 
   constructor() { }
 
