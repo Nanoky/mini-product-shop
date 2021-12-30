@@ -2,7 +2,31 @@
     padding: 5%;
 }
 
+.title {
+    font-size: xx-large;
+}
+
+.product-list-page::after {
+    content: "";
+    background: url("/assets/background.png");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+a {
+    color: black;
+}
+
 mat-grid-tile {
     border-radius: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+mat-grid-list {
+    margin-top: 5%;
 }
