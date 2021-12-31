@@ -1,0 +1,42 @@
+version: "3.3"
+
+services:
+  # MySQL
+  db:
+    container_name: db
+    image: mysql:latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: mini-shop
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3308:3306"
+
+  # FastAPI
+  api:
+    container_name: api
+    # db起動後に立ち上げる
+    depends_on:
+      - db
+    # path配下のDockerfile読み込み
+    build: ./backend
+    restart: always
+    ports:
+      - "8000:8000"
+
+  # Angular
+  app:
+    container_name: app
+    # api
+    depends_on:
+      - api
+    # path  Dockerfile
+    build: ./frontend
+    restart: always
+    ports:
+      - "8080:80"
+
+

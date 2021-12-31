@@ -8,13 +8,15 @@ import { Product } from './product';
   providedIn: 'root'
 })
 export class ProductService {
+  api: string = "http://127.0.0.1:8000"; 
+
   constructor(private http: HttpClient) { }
 
   getItems(page: number = 1, size: number = 50) : Observable<Page> {
-    return this.http.get<Page>("http://127.0.0.1:8000/products?page=" + page + "&size=" + size);
+    return this.http.get<Page>(this.api + "/products?page=" + page + "&size=" + size);
   }
 
   getItem(id: number) : Observable<Product> {
-    return this.http.get<Product>("http://127.0.0.1:8000/products/" + id);
+    return this.http.get<Product>(this.api + "/products/" + id);
   }
 }
