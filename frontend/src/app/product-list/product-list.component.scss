@@ -1,5 +1,6 @@
 .product-list-page {
     padding: 5%;
+    height: 100%;
 }
 
 .title {
@@ -8,7 +9,7 @@
 
 .product-list-page::after {
     content: "";
-    background: url("/assets/background.png");
+    background: white url("/assets/background.png") repeat fixed center;
     opacity: 0.3;
     top: 0;
     left: 0;
