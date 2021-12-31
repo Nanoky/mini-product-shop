@@ -1,11 +1,29 @@
-
-from typing import List
+import json
 from fastapi import FastAPI
 from fastapi.param_functions import Depends
 from sqlalchemy.orm.session import Session
 from src import database, models, schemas
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_pagination import Page, add_pagination, paginate
+
+
+# Drop all tables
+for t in database.Base.metadata.sorted_tables:
+    t.drop(database.engine, checkfirst=True)
+# Create all needed tables
+database.Base.metadata.create_all(bind=database.engine)
+
+db = database.SessionLocal()
+
+with open("products.json") as json_file:
+    data = json.load(json_file)
+    for p in data["Products"]:
+        product = models.Product(id=int(p['Id']), name=p['Title'], image_url=p["ImageUrl"], price=p["Price"], description=p["Description"])
+        db.add(product)
+    db.commit()
+    print("Database initialization done")
+
+
 
 def get_db():
    db = database.SessionLocal()
